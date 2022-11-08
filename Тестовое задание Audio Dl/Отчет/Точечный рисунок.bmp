@@ -1,0 +1,74 @@
+\documentclass[a4paper,12pt]{article}
+
+%%% Работа с русским языком
+\usepackage{cmap}					% поиск в PDF
+\usepackage{mathtext} 				% русские буквы в фомулах
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english,russian]{babel}	% локализация и переносы
+
+%%% Дополнительная работа с математикой
+\usepackage{amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{amsmath}
+\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
+
+%% Номера формул
+%\mathtoolsset{showonlyrefs=true} % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+
+%% Шрифты
+\usepackage{euscript}	 % Шрифт Евклид
+\usepackage{mathrsfs} % Красивый матшрифт
+
+%% Свои команды
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+
+%% Перенос знаков в формулах (по Львовскому)
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
+	{\hbox{$\mathsurround=0pt #1$}}{}}
+
+%%% Работа с картинками
+\usepackage{graphicx}  % Для вставки рисунков
+\graphicspath{{images/}{images2/}}  % папки с картинками
+\setlength\fboxsep{3pt} % Отступ рамки \fbox{} от рисунка
+\setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
+\usepackage{wrapfig} % Обтекание рисунков и таблиц текстом
+
+%%% Работа с таблицами
+\usepackage{array,tabularx,tabulary,booktabs} % Дополнительная работа с таблицами
+\usepackage{longtable}  % Длинные таблицы
+\usepackage{multirow} % Слияние строк в таблице
+\usepackage[unicode, pdftex]{hyperref}
+\usepackage{xcolor}
+\definecolor{urlcolor}{HTML}{0000ff}
+\definecolor{linkcolor}{HTML}{799B03}
+\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
+%%% Заголовок
+\author{Владимир Димитров}
+\title{Описание работы}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\tableofcontents
+	\newpage
+	\section{Данные}
+	Набор данных \href{https://github.com/karolpiczak/ESC-50}{ESC-50} представляет собой помеченную выборку из 2000 записей окружающей среды. Набор данных состоит из 50 классов, которые можно распределить по 5 главным категориям:
+	\begin{enumerate}
+		\item Животные
+		\item Звуки природы
+		\item Звуки человека
+		\item Бытовые звуки
+		\item Звуки города
+	\end{enumerate}
+	Для каждого из класса доступно по 50 наблюдений. Для начала попробуем предсказывать по 50 классам, потом обучим наш классификатор на 5 категориях.
+	
+	
+	\section{Код}
+	
+	Для удобно работы с кодом создадим класс TaskConfig, в котором возможна удобная редактирование параметров нашего кода.
+	
+	
+	
+
+\end{document}
